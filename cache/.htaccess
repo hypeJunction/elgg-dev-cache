@@ -1,0 +1,6 @@
+<FilesMatch "\.(jpg|jpeg|gif|png|mp3|flv|mov|avi|3pg|html|htm|swf|js|css|ico)$">
+ 	<IfModule mod_headers.c>
+         Header unset Etag
+         Header set Cache-Control "max-age=2628000, public"
+    </IfModule>
+</FilesMatch>
