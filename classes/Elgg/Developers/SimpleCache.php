@@ -123,7 +123,7 @@ class SimpleCache extends \Elgg\Cache\SimpleCache {
 
 			$bytes = elgg_trigger_plugin_hook('simplecache:generate', $hook_type, $hook_params, $bytes);
 
-			file_put_contents($cached_file, $bytes);
+			file_put_contents($cached_file, $bytes, FILE_APPEND | LOCK_EX);
 			self::$log[$view] = $hash;
 			$this->saveLog();
 		}
